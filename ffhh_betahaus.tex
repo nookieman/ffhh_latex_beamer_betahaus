@@ -2,8 +2,9 @@
 \usetheme{intridea}  %% Themenwahl
 
 \usepackage[ngerman]{babel} 
-\usepackage[T1]{fontenc} 				% richtige Silbentrennung
-\usepackage[utf8]{inputenc}    % Umlaute etc.! 
+\usepackage[T1]{fontenc}    % richtige Silbentrennung
+\usepackage[utf8]{inputenc} % Umlaute etc.!
+\usepackage{eurosym}
 \title{Freifunk Hamburg}
 \author{Freifunk Hamburg}
 \date{\today}
@@ -12,6 +13,7 @@
 \maketitle
 \frame{\tableofcontents[currentsection]}
 
+%2
 \section{Abschnitt 1}
 \begin{frame} %%Eine Folie
   \frametitle{Was ist freifunk.net} %%Folientitel
@@ -34,15 +36,35 @@
   \end{itemize}
 \end{frame}
 
+%3
+\begin{frame}{Ziel des Projekts}
+	\begin{itemize}
+		\item Verbreitung offener WLAN-Netzwerke
+		\item Zugangshürden zum Internet minimieren
+		\item Aufklärung und Sensibilisierung zum Thema ``Kommunikations- und Informationsfreiheit''
+		\item Menschen dazu befähigen, eigene Netze aufzubauen und zu betreiben
+		\item Soziale Strukturen bilden und unterstützen %?
+	\end{itemize}
+\end{frame}
+
+%5
+\begin{frame}{Warum WLAN?}
+	\begin{itemize}
+		\item Mit WLAN können Daten mobil mit hoher Bandbreite gesendet und empfangen werden
+		\item Die Kosten für WLAN-Hardware sind gering und es entstehen kaum Betriebskosten (Router ab \EUR{15}, Strom \EUR{10} im Jahr)
+		\item WLAN kann auch dort eingesetzt werden, wo es keine Kabel gibt oder eine Kabelverbindung zu teuer ist. %[Parks, Entwicklungsländer, etc...]
+		\item (WLAN kann von jedem lizenzfrei eingesetzt werden) %weg?
+	\end{itemize}
+\end{frame}
 
 %23
 \begin{frame}{Wachstum garantiert}
 	\begin{itemize}
-		\item Durch niedrige Einstiegshuerde kann fast jede\_r Interessierte einfach teilnehmen (20 €)
-		\item In fast jeder deutschen Groszstadt gibt es eine lokale freifunk-Community
-		\item Das hamburger Freifunkprojekt besteht bereits aus XX Knoten und waechst stetig weiter %TODO abgewandelt, so ok? CCC erwaehnen?
-		\item Auch in vielen laendlichen Regionen sind bereits Freifunknetze entstanden
-		\item Viele Gastronomiebetriebe in Hamburg nutzen Freifunk, um ihren Gaesten ein kostenloses und anonymisiertes WLAN anzubieten, ohne dafuer Geld an kommerzielle WLAN Anbieter zahlen zu muessen %TODO stimmt nicht. rauslassen? abwandeln?
+		\item Durch niedrige Einstiegshürde kann fast jede\_r Interessierte einfach teilnehmen (\EUR{20})
+		\item In fast jeder deutschen Großstadt gibt es eine lokale freifunk-Community
+		\item Das hamburger Freifunkprojekt besteht bereits aus XX Knoten und wächst stetig weiter %TODO abgewandelt, so ok? CCC erwaehnen?
+		\item Auch in vielen ländlichen Regionen sind bereits Freifunknetze entstanden
+		\item Viele Gastronomiebetriebe in Hamburg nutzen Freifunk, um ihren Gästen ein kostenloses und anonymisiertes WLAN anzubieten, ohne dafür Geld an kommerzielle WLAN Anbieter zahlen zu müssen %TODO stimmt nicht. rauslassen? abwandeln?
 	\end{itemize}
 \end{frame}
 
