@@ -5,6 +5,10 @@
 \usepackage[T1]{fontenc}    % richtige Silbentrennung
 \usepackage[utf8]{inputenc} % Umlaute etc.!
 \usepackage{eurosym}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains}
+
 \title{Freifunk Hamburg}
 \author{Freifunk Hamburg}
 \date{\today}
@@ -82,20 +86,69 @@
 	(to mesh = Englisch: vermaschen)
 
 	Jeder Accesspoint in einem Netzwerk wird automatisch zu einem aktiven Knoten für andere
-	\begin{itemize}
-		\item $A$ kann $B$ erreichen und $B$ erreicht $C$
-		\item ueber ``ad-hoc routing''-Protokolle tauschen die Geräte selbstständig Informationen darüber aus, wer wen erreichen kann
-		\item $A$ erreicht automatisch $B$, wenn\\
-		$A$ Kontakt zu $B$ und\\
-		$B$ Kontakt zu $C$ hat
-	\end{itemize}
+	\begin{columns}[c]
+		\begin{column}[c]{0.4\textwidth}
+			\begin{tikzpicture}
+				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
+				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
+				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=2.1cm]
+				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=1.5mm, inner sep=0pt]
+
+				\node [vertex] (a) {};
+				\node [vertex, xshift=1.7cm, yshift=0.6cm] (b) {};
+				\node [vertex, xshift=2.8cm, yshift=-0.5cm] (c) {};
+
+				\node [place, label=above:$A$] (A) {};
+				\node [place, xshift=1.7cm, yshift=0.6cm, label=above:$B$] (B) {};
+				\node [place, xshift=2.8cm, yshift=-0.5cm, label=right:$C$] (C) {};
+
+				\path[-, thick, color=gray]
+				(A) edge (B)
+				(B) edge (C);
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}[c]{0.6\textwidth}
+			\begin{itemize}
+				\item $A$ kann $B$ erreichen und $B$ erreicht $C$
+				\item Über ``ad-hoc routing''-Protokolle tauschen die Geräte selbstständig Informationen darüber aus, wer wen erreichen kann
+				\item $A$ erreicht automatisch $B$, wenn\\
+				$A$ Kontakt zu $B$ und\\
+				$B$ Kontakt zu $C$ hat
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 %12
-\begin{frame}{Vorraussetzung ist freier Datentransit} % Titel aendern
-	Damit Informationen von einem Ende des Netzes ($A$) zum anderen gelangen können ($C$), muss die dazwischen liegende Knotenpunkte ($B$) den ungehinderten Transfer von Daten erlauben!\\
-	Das machen die Router im Freifunk.
-\end{frame}
+\begin{frame}{Vorraussetzung ist freier Datentransit} %TODO Titel aendern
+	\begin{columns}[c]
+		\begin{column}[c]{.4\textwidth}
+			\begin{tikzpicture}
+				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
+				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
+				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=2.1cm]
+				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=1.5mm, inner sep=0pt]
+
+				\node [vertex] (a) {};
+				\node [vertex, xshift=1.7cm, yshift=0.6cm] (b) {};
+				\node [vertex, xshift=2.8cm, yshift=-0.5cm] (c) {};
+
+				\node [place, label=above:$A$] (A) {};
+				\node [place, xshift=1.7cm, yshift=0.6cm, label=above:$B$] (B) {};
+				\node [place, xshift=2.8cm, yshift=-0.5cm, label=right:$C$] (C) {};
+
+				\path[-, thick, color=gray]
+				(A) edge (B)
+				(B) edge (C)
+				(A) edge[dashed] (C);
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}[c]{.6\textwidth}
+			Damit Informationen von einem Ende des Netzes ($A$) zum anderen gelangen können ($C$), muss die dazwischen liegende Knotenpunkte ($B$) den ungehinderten Transfer von Daten erlauben!\\
+			Das machen die Router im Freifunk.
+		\end{column}
+	\end{columns}
+	\end{frame}
 
 %18
 \begin{frame}{Das Netz waechst}
