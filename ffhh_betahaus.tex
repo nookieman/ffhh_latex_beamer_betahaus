@@ -152,8 +152,64 @@
 	\end{frame}
 
 %18
-\begin{frame}{Das Netz waechst}
+\begin{frame}{Das Netz wächst}
+	\begin{tikzpicture}
+		\definecolor{outerCircleColour}{RGB}{220, 0, 103}
+		\definecolor{innerCircleColour}{RGB}{255, 203, 18}
+		\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=40pt]
+		\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=7pt, inner sep=0pt]
 
+		\node [vertex] (a) {};
+		\node [vertex, xshift=15pt, yshift=30pt] (b) {};
+		\node [vertex, xshift=65pt, yshift=5pt] (c) {};
+		\node [vertex, xshift=33pt, yshift=-3pt] (d) {};
+		\node [vertex, xshift=85pt, yshift=-25pt] (e) {};
+		\node [vertex, xshift=100pt, yshift=2pt] (f) {};
+		\node [vertex, xshift=91pt, yshift=32pt] (g) {};
+		\node [vertex, xshift=110pt, yshift=-52pt] (h) {};
+		\node [vertex, xshift=124pt, yshift=23pt] (i) {};
+		\node [vertex, xshift=134pt, yshift=-7pt] (j) {};
+		\node [vertex, xshift=164pt, yshift=-14pt] (k) {};
+		\node [vertex, xshift=144pt, yshift=-66pt] (l) {};
+		\node [vertex, xshift=170pt, yshift=-46pt] (m) {};
+		\node [vertex, xshift=201pt, yshift=-59pt] (n) {};
+
+		\node [place] (A) {};
+		\node [place, xshift=15pt, yshift=30pt] (B) {};
+		\node [place, xshift=65pt, yshift=5pt] (C) {};
+		\node [place, xshift=33pt, yshift=-3pt] (D) {};
+		\node [place, xshift=85pt, yshift=-25pt] (E) {};
+		\node [place, xshift=100pt, yshift=2pt] (F) {};
+		\node [place, xshift=91pt, yshift=32pt] (G) {};
+		\node [place, xshift=110pt, yshift=-52pt] (H) {};
+		\node [place, xshift=124pt, yshift=23pt] (I) {};
+		\node [place, xshift=134pt, yshift=-7pt] (J) {};
+		\node [place, xshift=164pt, yshift=-14pt] (K) {};
+		\node [place, xshift=144pt, yshift=-66pt] (L) {};
+		\node [place, xshift=170pt, yshift=-46pt] (M) {};
+		\node [place, xshift=201pt, yshift=-59pt] (N) {};
+
+		\path[-, thick, color=gray]
+		(A) edge (B)
+		(A) edge (D)
+		(B) edge (D)
+		(C) edge (D)
+		(C) edge (E)
+		(C) edge (F)
+		(C) edge (G)
+		(E) edge (F)
+		(E) edge (H)
+		(F) edge (G)
+		(F) edge (I)
+		(F) edge (J)
+		(G) edge (I)
+		(H) edge (L)
+		(I) edge (J)
+		(J) edge (K)
+		(K) edge (M)
+		(L) edge (M)
+		(M) edge (N);
+	\end{tikzpicture}
 \end{frame}
 
 %19
