@@ -45,9 +45,19 @@
 
 \setbeamertemplate{headline}{
   \leavevmode
-  
+
 }
 
+
+\setbeamertemplate{frametitle} {
+    \vskip 7ex
+    \leavevmode
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=1.8ex,dp=1ex]{frametitle}%
+            \hspace*{2ex}\small\insertframetitle
+        \end{beamercolorbox}
+    }%
+}
 
 
 
