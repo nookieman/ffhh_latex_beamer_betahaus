@@ -10,35 +10,58 @@
 \usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,fit,positioning,shapes.symbols,chains}
 
 \title{Freifunk Hamburg}
-\author{Freifunk Hamburg}
-\date{\today}
+\author{hamburg.freifunk.net}
+\date{14. Februar 2013}
+
+%TODO Saetze mit Punkt beenden
 
 \begin{document}
 \maketitle
 \frame{\tableofcontents[currentsection]}
 
-%2
-\section{Abschnitt 1}
-\begin{frame}{Was ist freifunk.net?}
-  hamburg.freifunk ist eine nicht kommerzielle Initiative, die in Zusammenarbeit mit anderen Organisationen und Gruppen die Idee freier Netzwerke fördert
-  \begin{itemize}
-	\item Digitale Gesellschaft
-	\item CCC
-	\item MOAR %TODO MOAR
-  \end{itemize}
+\begin{frame}{Wer sind wir?}
+	Arnd Siebke
+	\begin{itemize}
+		\item Erzieher in einem Hort in Hamburg
+	\end{itemize}
+
+	Christopher Schwardt
+	\begin{itemize}
+		\item Informatikstudent Universität Hamburg
+	\end{itemize}
+
+	Andre Müller
+	\begin{itemize}
+		\item Systemadministrator
+	\end{itemize}
 \end{frame}
 
 %2
-\begin{frame}
+\begin{frame}{Was ist Freifunk?}
+	\begin{itemize}
+		\item Freifunk ist eine nicht kommerzielle Initiative zur Förderung freier Netzwerke
+
+		\item Freifunk Hamburg ist eine Projektgruppe des Chaos Computer Club Hamburg
+
+		\item Zusammenarbeit
+		%TODO vspace
+		\begin{itemize}
+			\item Digitale Gesellschaft e.V.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%2
+\begin{frame}{Was ist Freifunk?}
 \begin{itemize}
-	\item \textbf{frei} wird dabei verstanden als:
+	\item \textbf{frei} wird verstanden als:
 	\begin{itemize}
 		\item Öffentlich - jedem zugänglich
 		\item Nicht kommerziell
 		\item Im Besitz der Gemeinschaft
 		\item Netzneutral - keine Manipulation der Datenströme
 	\end{itemize}
-	\item Mit \textbf{Vernetzung} meinen wir:
+	\item Mit \textbf{Netzwerk} meinen wir:
 	\begin{itemize}
 		\item Kommunikation zwischen Menschen unter Verwendung digitaler Medien (Computer, Handys, Datennetze)
 	\end{itemize}
@@ -52,17 +75,7 @@
 		\item Zugangshürden zum Internet minimieren
 		\item Aufklärung und Sensibilisierung zum Thema ``Kommunikations- und Informationsfreiheit''
 		\item Menschen dazu befähigen, eigene Netze aufzubauen und zu betreiben
-		\item Soziale Strukturen bilden und unterstützen %TODO ?
-	\end{itemize}
-\end{frame}
-
-%4
-\begin{frame}{Freie Netzwerke - Wozu?} %TODO hatten wir eigentlich rausgelassen, aber ich finde min. die beiden ersten punkte interessant. vlt nimmt man die noch fuer eine andere folie?
-	\begin{itemize}
-		\item Die Informations- und Kommunikationsfreiheit im Internet wird zunehmend eingeschränkt
-		\item Trotz des Slogans ``Internet für alle'' gibt es Anzeichen einer sich verfestigenden digitalen Kluft - ärmere, weniger technisch versierte und ältere Menschen nehmen wenig oder gar nicht am sogenannten Informationszeitalter teil
-		\item In dünn besiedelten und strukturschwachen Gebieten (``areas of market failure'') werden keine (bezahlbaren) Breitbandanschlüsse angeboten
-		\item Echte ``e-democracy'' soll von ``unten'' kommen
+		\item Soziale Strukturen bilden und unterstützen
 	\end{itemize}
 \end{frame}
 
@@ -71,24 +84,24 @@
 	\begin{itemize}
 		\item Mit WLAN können Daten mobil mit hoher Bandbreite gesendet und empfangen werden
 		\item Die Kosten für WLAN-Hardware sind gering und es entstehen kaum Betriebskosten (Router ab \EUR{15}, Strom \EUR{10} im Jahr)
-		\item WLAN kann auch dort eingesetzt werden, wo es keine Kabel gibt oder eine Kabelverbindung zu teuer ist. %[Parks, Entwicklungsländer, etc...]
-		\item (WLAN kann von jedem lizenzfrei eingesetzt werden) %TODO weg?
+		\item WLAN kann auch dort eingesetzt werden, wo es keine Kabel gibt oder eine Kabelverbindung zu teuer ist
+		%[Parks, Entwicklungsländer, etc...]
 	\end{itemize}
 \end{frame}
 
 %10
-\begin{frame}{Das Konzept von ``Mesh Netzwerken''} %TODO oder Networks? Wenn so, dann mit -
-	Sich selbst organisierende Netzwerke
-%	\includegraphics{mesh1}
+\begin{frame}{Mesh-Netzwerke}
+	\begin{itemize}
+		\item to mesh = Englisch: vermaschen
+		\item Selbst organisierende Netzwerke
+		\item Jeder Router ist automatisch aktiver Teil des Netzwerks
+	\end{itemize}
 \end{frame}
 
 %11
-\begin{frame}{Das Konzept von ``Mesh Netzwerken''} %TODO same here
-	(to mesh = Englisch: vermaschen)
-
-	Jeder Accesspoint in einem Netzwerk wird automatisch zu einem aktiven Knoten für andere
-	\begin{columns}[c]
-		\begin{column}[c]{0.4\textwidth}
+\begin{frame}{Mesh-Netzwerke}
+%	\begin{columns}[c]
+%		\begin{column}[c]{0.4\textwidth}
 			\begin{tikzpicture}
 				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
 				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
@@ -107,23 +120,24 @@
 				(A) edge (B)
 				(B) edge (C);
 			\end{tikzpicture}
-		\end{column}
-		\begin{column}[c]{0.6\textwidth}
-			\begin{itemize}
-				\item $A$ kann $B$ erreichen und $B$ erreicht $C$
-				\item Über ``ad-hoc routing''-Protokolle tauschen die Geräte selbstständig Informationen darüber aus, wer wen erreichen kann
-				\item $A$ erreicht automatisch $C$, wenn\\
-				$A$ Kontakt zu $B$ und\\
-				$B$ Kontakt zu $C$ hat
-			\end{itemize}
-		\end{column}
-	\end{columns}
+%		\end{column}
+%		\begin{column}[c]{0.5\textwidth}
+%			\begin{itemize}
+%				\item $A$ kann $B$ erreichen und $B$ erreicht $C$
+%				\item Über ``ad-hoc routing''-Protokolle tauschen die Geräte selbstständig Informationen darüber aus, wer wen erreichen kann
+%				\item $A$ erreicht automatisch $C$, wenn\\
+%				$A$ Kontakt zu $B$ und\\
+%				$B$ Kontakt zu $C$ hat
+%			\end{itemize}
+%		\end{column}
+%	\end{columns}
 \end{frame}
 
 %12
-\begin{frame}{Vorraussetzung ist freier Datentransit} %TODO Titel aendern
-	\begin{columns}[c]
-		\begin{column}[c]{.4\textwidth}
+\begin{frame}{Mesh-Netzwerke}
+%	\begin{columns}[c]
+%		\begin{column}[c]{.4\textwidth}
+%TODO groesser!
 			\begin{tikzpicture}
 				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
 				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
@@ -143,12 +157,12 @@
 				(B) edge (C)
 				(A) edge[dashed] (C);
 			\end{tikzpicture}
-		\end{column}
-		\begin{column}[c]{.5\textwidth}
-			Damit Informationen von einem Ende des Netzes ($A$) zum anderen gelangen können ($C$), muss die dazwischen liegende Knotenpunkte ($B$) den ungehinderten Transfer von Daten erlauben!\\
-			Das machen die Router im Freifunk.
-		\end{column}
-	\end{columns}
+%		\end{column}
+%		\begin{column}[c]{.5\textwidth}
+%			Damit Informationen von einem Ende des Netzes ($A$) zum anderen gelangen können ($C$), muss die dazwischen liegende Knotenpunkte ($B$) den ungehinderten Transfer von Daten erlauben!\\
+%			Das machen die Router im Freifunk.
+%		\end{column}
+%	\end{columns}
 \end{frame}
 
 %18
@@ -212,59 +226,200 @@
 	\end{tikzpicture}
 \end{frame}
 
+%\begin{frame}
+%\begin{tikzpicture}
+%\draw[help lines] (0,0) grid (3,2);
+%\draw
+%(0,0) -- (2,1) -- (1,0);
+%\pgftransformscale{.2}
+%\draw[red] (0,0) -- (2,1) -- (1,0);
+%\end{tikzpicture}
+%\end{frame}
+
 %19
 \begin{frame}{Netzwerke verbinden sich untereinander}
+	\begin{columns}[c]
+		\begin{column}[c]{.4\textwidth}
+			\begin{tikzpicture}
+				\pgftransformscale{.75}
 
+				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
+				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
+				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=40pt]
+				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=7pt, inner sep=0pt]
+
+				\node [vertex] (a) {};
+				\node [vertex, xshift=15pt, yshift=30pt] (b) {};
+				\node [vertex, xshift=65pt, yshift=5pt] (c) {};
+				\node [vertex, xshift=33pt, yshift=-3pt] (d) {};
+				\node [vertex, xshift=85pt, yshift=-25pt] (e) {};
+				\node [vertex, xshift=100pt, yshift=2pt] (f) {};
+				\node [vertex, xshift=91pt, yshift=32pt] (g) {};
+				\node [vertex, xshift=110pt, yshift=-52pt] (h) {};
+				\node [vertex, xshift=124pt, yshift=23pt] (i) {};
+				\node [vertex, xshift=134pt, yshift=-7pt] (j) {};
+				\node [vertex, xshift=164pt, yshift=-14pt] (k) {};
+				\node [vertex, xshift=144pt, yshift=-66pt] (l) {};
+				\node [vertex, xshift=170pt, yshift=-46pt] (m) {};
+				\node [vertex, xshift=201pt, yshift=-59pt] (n) {};
+
+				\node [place] (A) {};
+				\node [place, xshift=15pt, yshift=30pt] (B) {};
+				\node [place, xshift=65pt, yshift=5pt] (C) {};
+				\node [place, xshift=33pt, yshift=-3pt] (D) {};
+				\node [place, xshift=85pt, yshift=-25pt] (E) {};
+				\node [place, xshift=100pt, yshift=2pt] (F) {};
+				\node [place, xshift=91pt, yshift=32pt] (G) {};
+				\node [place, xshift=110pt, yshift=-52pt] (H) {};
+				\node [place, xshift=124pt, yshift=23pt] (I) {};
+				\node [place, xshift=134pt, yshift=-7pt] (J) {};
+				\node [place, xshift=164pt, yshift=-14pt] (K) {};
+				\node [place, xshift=144pt, yshift=-66pt] (L) {};
+				\node [place, xshift=170pt, yshift=-46pt] (M) {};
+				\node [place, xshift=201pt, yshift=-59pt] (N) {};
+
+				\path[-, thick, color=gray]
+				(A) edge (B)
+				(A) edge (D)
+				(B) edge (D)
+				(C) edge (D)
+				(C) edge (E)
+				(C) edge (F)
+				(C) edge (G)
+				(E) edge (F)
+				(E) edge (H)
+				(F) edge (G)
+				(F) edge (I)
+				(F) edge (J)
+				(G) edge (I)
+				(H) edge (L)
+				(I) edge (J)
+				(J) edge (K)
+				(K) edge (M)
+				(L) edge (M)
+				(M) edge (N);
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}[c]{.4\textwidth}
+			\reflectbox{
+			\begin{tikzpicture}
+				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
+				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
+				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=40pt]
+				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=7pt, inner sep=0pt]
+
+				\node [vertex] (a) {};
+				\node [vertex, xshift=15pt, yshift=30pt] (b) {};
+				\node [vertex, xshift=65pt, yshift=5pt] (c) {};
+				\node [vertex, xshift=33pt, yshift=-3pt] (d) {};
+				\node [vertex, xshift=85pt, yshift=-25pt] (e) {};
+				\node [vertex, xshift=100pt, yshift=2pt] (f) {};
+				\node [vertex, xshift=91pt, yshift=32pt] (g) {};
+				\node [vertex, xshift=110pt, yshift=-52pt] (h) {};
+				\node [vertex, xshift=124pt, yshift=23pt] (i) {};
+				\node [vertex, xshift=134pt, yshift=-7pt] (j) {};
+				\node [vertex, xshift=164pt, yshift=-14pt] (k) {};
+				\node [vertex, xshift=144pt, yshift=-66pt] (l) {};
+				\node [vertex, xshift=170pt, yshift=-46pt] (m) {};
+				\node [vertex, xshift=201pt, yshift=-59pt] (n) {};
+
+				\node [place] (A) {};
+				\node [place, xshift=15pt, yshift=30pt] (B) {};
+				\node [place, xshift=65pt, yshift=5pt] (C) {};
+				\node [place, xshift=33pt, yshift=-3pt] (D) {};
+				\node [place, xshift=85pt, yshift=-25pt] (E) {};
+				\node [place, xshift=100pt, yshift=2pt] (F) {};
+				\node [place, xshift=91pt, yshift=32pt] (G) {};
+				\node [place, xshift=110pt, yshift=-52pt] (H) {};
+				\node [place, xshift=124pt, yshift=23pt] (I) {};
+				\node [place, xshift=134pt, yshift=-7pt] (J) {};
+				\node [place, xshift=164pt, yshift=-14pt] (K) {};
+				\node [place, xshift=144pt, yshift=-66pt] (L) {};
+				\node [place, xshift=170pt, yshift=-46pt] (M) {};
+				\node [place, xshift=201pt, yshift=-59pt] (N) {};
+
+				\path[-, thick, color=gray]
+				(A) edge (B)
+				(A) edge (D)
+				(B) edge (D)
+				(C) edge (D)
+				(C) edge (E)
+				(C) edge (F)
+				(C) edge (G)
+				(E) edge (F)
+				(E) edge (H)
+				(F) edge (G)
+				(F) edge (I)
+				(F) edge (J)
+				(G) edge (I)
+				(H) edge (L)
+				(I) edge (J)
+				(J) edge (K)
+				(K) edge (M)
+				(L) edge (M)
+				(M) edge (N);
+			\end{tikzpicture}}
+		\end{column}
+	\end{columns}
 \end{frame}
 
+%TODO hier Beispiel von Wilhelmsburg rein
+
+%Hier koennte bashos Teil beginnen
 %13
 \begin{frame}{Praktische Umsetzung}
 	\begin{itemize}
-		\item Sehr häufig verwendet: TP-Link 741nd (ca. \EUR{15})
+		\item Sehr häufig verwendet: TL-WR741nd (ca. \EUR{15})
 		\item Austausch der vorhandenen Software durch Linux Firmware, die man von unserer Webseite herunterladen kann
 		\item Antennen abschraub- und austauschbar
-		\item Auf Wunsch erhältst du von uns ein fertig konfiguriertes Gerät, dass nur noch zu Hause angeschlossen werden muss
-		\item Vorgefertigte Software auch für weitere Router
-	\end{itemize}
-\end{frame}
-
-%23
-\begin{frame}{Wachstum garantiert}
-	\begin{itemize}
-		\item Durch niedrige Einstiegshürde kann fast jede\_r Interessierte einfach teilnehmen (\EUR{15})
-		\item In fast jeder deutschen Großstadt gibt es eine lokale freifunk-Community
-		\item Das hamburger Freifunkprojekt besteht bereits aus XX Knoten und wächst stetig weiter %TODO abgewandelt, so ok? CCC erwaehnen?
-		\item Auch in vielen ländlichen Regionen sind bereits Freifunknetze entstanden
-		\item Viele Gastronomiebetriebe in Hamburg nutzen Freifunk, um ihren Gästen ein kostenloses und anonymisiertes WLAN anzubieten, ohne dafür Geld an kommerzielle WLAN Anbieter zahlen zu müssen %TODO stimmt nicht. rauslassen? abwandeln?
+		\item Fertig konfigurierte Router
+		\item Vorgefertigte Firmware auch für weitere Router
 	\end{itemize}
 \end{frame}
 
 %20
 \begin{frame}{Die Idee}
-	Vernetzung von Kulturstätten und Aufbau eines stadtweiten Intranets
 	\begin{itemize}
-		\item Verschiedene Kultureinrichtungen werden zu WLAN-Knotenpunkten im lokalen Raum
-		\item Die einzelnen Einrichtungen vernetzen sich untereinander
 		\item Es entsteht ein eigenes stadtweites Intranet mit lokalen Zugängen ins Internet
 		\item Kultureinrichtungen können ein eigenes Programm (Communityradio, Streaming-Media) im Intranet anbieten
 		\item Jeder Mensch kann Teil dieses Netzes sein ohne monatliche Kosten
+		\item Ermöglichen von Teilhabe am Digitalzeitalter
 	\end{itemize}
 \end{frame}
 
 %27
-\begin{frame}{Welche Regeln sollte man beim Mitmachen beachten?}
+\begin{frame}{Gentlemen Agreement}
 	\begin{itemize}
-		\item Dienstbereitstellung erfolgt ausschließlich auf freiwilliger Basis
-		\item Es gibt keinerlei Nutzungsgarantie
-		\item Entgelte (z.B. für Wartung/Pflege der WLAN-Router, DSL) nachbarschaftlich regeln, nie für Internetangebot kommerziell Geld verlangen
-		\item Haftung - generell gilt: verantwortlich ist immer, wer die unerlaubte Handlung vollführt, nicht wer den hamburger Freifunkknoten bereitstellt
+		\item Sei Fair!
+		\item Achte auf deine Sicherheit!
+		\item Keine rechtswidrige Nutzung!
 	\end{itemize}
-	\it{Freifunkknoten = Freifunkrouter} %TODO raus?
 \end{frame}
 
-\begin{frame}{Wie kann ich Freifunk Hamburg unterstuetzen?}
+\begin{frame}{Sicherheit}
 	\begin{itemize}
-		\item ...
+		\item \textbf{HTTPS / SSL}
+	\end{itemize}
+\end{frame}
+
+%23
+\begin{frame}{Freifunk aktuell}
+	\begin{itemize}
+		\item Niedrige Einstiegshürde
+		\item Freifunk-Communities in vielen Städten
+		\item Das hamburger Freifunkprojekt besteht bereits aus XX Knoten und wächst stetig weiter
+		\item Auch in vielen ländlichen Regionen sind bereits Freifunknetze entstanden
+		\item Gastronomiebetrieben bietet Freifunk die Möglichkeit ein freies WLAN zu stellen
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Coole Projekte}
+	\begin{itemize}
+		\item Antennenbau-Workshop
+		\item Outdoor-Gehäuse
+		\item Solarbetrieb
+		\item Flash-Workshops
+		\item Offen für Projekte
 	\end{itemize}
 \end{frame}
 
@@ -275,10 +430,28 @@
 		\item Ein eigenes, unabhängiges Netzwerk aufbauen, um damit zum Beispiel:
 		\begin{itemize}
 			\item Kostenlos untereinander Daten auszutauschen und zu telefonieren (Voice-over-IP)
-			\item Lizenzfreies Community Radio betreiben und hören
-			\item Bildtelefonier und Videobroadcasting (Web-TV) nutzen %TODO hier vielleicht auch lieber dann telefonieren auffuehren
-			\item <deine Idee hier> %TODO weg?
+			\item Community Radio und Videobroadcasting (Web-TV)
 		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Medienstandort Hamburg}
+	\begin{itemize}
+		\item Freifunk macht Hamburg für Kreative attraktiver
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Freifunk Hamburg unterstützen}
+	\begin{itemize}
+		\item Das Netz erweitern
+		\begin{itemize}
+			\item Eigene Router aufstellen
+			\item Platz für Router bereitstellen
+		\end{itemize}
+		\item Hardware spenden
+		\item Finanziell Unterstützen
+		\item Sprich über uns
+		\item Verbreite die Idee
 	\end{itemize}
 \end{frame}
 
