@@ -232,69 +232,8 @@
 %19
 \begin{frame}{Netzwerke verbinden sich untereinander}
 	\begin{columns}[c]
-		\begin{column}[c]{.4\textwidth}
-			\begin{tikzpicture}
-				\pgftransformscale{.75}
-
-				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
-				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
-				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=40pt]
-				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=7pt, inner sep=0pt]
-
-				\node [vertex] (a) {};
-				\node [vertex, xshift=15pt, yshift=30pt] (b) {};
-				\node [vertex, xshift=65pt, yshift=5pt] (c) {};
-				\node [vertex, xshift=33pt, yshift=-3pt] (d) {};
-				\node [vertex, xshift=85pt, yshift=-25pt] (e) {};
-				\node [vertex, xshift=100pt, yshift=2pt] (f) {};
-				\node [vertex, xshift=91pt, yshift=32pt] (g) {};
-				\node [vertex, xshift=110pt, yshift=-52pt] (h) {};
-				\node [vertex, xshift=124pt, yshift=23pt] (i) {};
-				\node [vertex, xshift=134pt, yshift=-7pt] (j) {};
-				\node [vertex, xshift=164pt, yshift=-14pt] (k) {};
-				\node [vertex, xshift=144pt, yshift=-66pt] (l) {};
-				\node [vertex, xshift=170pt, yshift=-46pt] (m) {};
-				\node [vertex, xshift=201pt, yshift=-59pt] (n) {};
-
-				\node [place] (A) {};
-				\node [place, xshift=15pt, yshift=30pt] (B) {};
-				\node [place, xshift=65pt, yshift=5pt] (C) {};
-				\node [place, xshift=33pt, yshift=-3pt] (D) {};
-				\node [place, xshift=85pt, yshift=-25pt] (E) {};
-				\node [place, xshift=100pt, yshift=2pt] (F) {};
-				\node [place, xshift=91pt, yshift=32pt] (G) {};
-				\node [place, xshift=110pt, yshift=-52pt] (H) {};
-				\node [place, xshift=124pt, yshift=23pt] (I) {};
-				\node [place, xshift=134pt, yshift=-7pt] (J) {};
-				\node [place, xshift=164pt, yshift=-14pt] (K) {};
-				\node [place, xshift=144pt, yshift=-66pt] (L) {};
-				\node [place, xshift=170pt, yshift=-46pt] (M) {};
-				\node [place, xshift=201pt, yshift=-59pt] (N) {};
-
-				\path[-, thick, color=gray]
-				(A) edge (B)
-				(A) edge (D)
-				(B) edge (D)
-				(C) edge (D)
-				(C) edge (E)
-				(C) edge (F)
-				(C) edge (G)
-				(E) edge (F)
-				(E) edge (H)
-				(F) edge (G)
-				(F) edge (I)
-				(F) edge (J)
-				(G) edge (I)
-				(H) edge (L)
-				(I) edge (J)
-				(J) edge (K)
-				(K) edge (M)
-				(L) edge (M)
-				(M) edge (N);
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}[c]{.4\textwidth}
-			\reflectbox{
+		\begin{column}[l]{.4\textwidth}
+			\scalebox{0.6}[0.6]{
 			\begin{tikzpicture}
 				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
 				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
@@ -352,6 +291,88 @@
 				(L) edge (M)
 				(M) edge (N);
 			\end{tikzpicture}}
+		\end{column}
+		\begin{column}{0.185\textwidth}
+			\begin{uncoverenv}<2->
+				\begin{tikzpicture}
+					\definecolor{outerCircleColour}{RGB}{220, 0, 103}
+					\definecolor{innerCircleColour}{RGB}{255, 203, 18}
+
+					\draw[color=white] (280pt, 85pt) arc (0:0:0pt);
+					\draw[color=white] (-180pt, 85pt) arc (0:0:0pt);
+
+					\draw[color=outerCircleColour, thick, xshift=-50pt, yshift=9pt] (-110pt, 0pt) arc (270:450:6pt);
+					\draw[color=outerCircleColour, thick, xshift=-50pt, yshift=11pt] (-110pt, 0pt) arc (270:450:4pt);
+					\draw[color=outerCircleColour, thick, xshift=-50pt, yshift=13pt] (-110pt, 0pt) arc (270:450:2pt);
+
+					\draw[color=outerCircleColour, thick, xshift=-9pt, yshift=21pt] (-110pt, 0pt) arc (90:270:6pt);
+					\draw[color=outerCircleColour, thick, xshift=-9pt, yshift=19pt] (-110pt, 0pt) arc (90:270:4pt);
+					\draw[color=outerCircleColour, thick, xshift=-9pt, yshift=17pt] (-110pt, 0pt) arc (90:270:2pt);
+
+					\draw[color=gray, ultra thick, xshift=-50pt, yshift=15] (-103pt, 0pt) edge[dashed] (-74pt, 0pt);
+				\end{tikzpicture}
+			\end{uncoverenv}
+		\end{column}
+		\begin{column}[r]{.5\textwidth}
+			\reflectbox{
+			\scalebox{0.6}[0.6]{
+			\begin{tikzpicture}
+				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
+				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
+				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=40pt]
+				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=7pt, inner sep=0pt]
+
+				\node [vertex] (a) {};
+				\node [vertex, xshift=15pt, yshift=30pt] (b) {};
+				\node [vertex, xshift=65pt, yshift=5pt] (c) {};
+				\node [vertex, xshift=33pt, yshift=-3pt] (d) {};
+				\node [vertex, xshift=85pt, yshift=-25pt] (e) {};
+				\node [vertex, xshift=100pt, yshift=2pt] (f) {};
+				\node [vertex, xshift=91pt, yshift=32pt] (g) {};
+				\node [vertex, xshift=110pt, yshift=-52pt] (h) {};
+				\node [vertex, xshift=124pt, yshift=23pt] (i) {};
+				\node [vertex, xshift=134pt, yshift=-7pt] (j) {};
+				\node [vertex, xshift=164pt, yshift=-14pt] (k) {};
+				\node [vertex, xshift=144pt, yshift=-66pt] (l) {};
+				\node [vertex, xshift=170pt, yshift=-46pt] (m) {};
+				\node [vertex, xshift=201pt, yshift=-59pt] (n) {};
+
+				\node [place] (A) {};
+				\node [place, xshift=15pt, yshift=30pt] (B) {};
+				\node [place, xshift=65pt, yshift=5pt] (C) {};
+				\node [place, xshift=33pt, yshift=-3pt] (D) {};
+				\node [place, xshift=85pt, yshift=-25pt] (E) {};
+				\node [place, xshift=100pt, yshift=2pt] (F) {};
+				\node [place, xshift=91pt, yshift=32pt] (G) {};
+				\node [place, xshift=110pt, yshift=-52pt] (H) {};
+				\node [place, xshift=124pt, yshift=23pt] (I) {};
+				\node [place, xshift=134pt, yshift=-7pt] (J) {};
+				\node [place, xshift=164pt, yshift=-14pt] (K) {};
+				\node [place, xshift=144pt, yshift=-66pt] (L) {};
+				\node [place, xshift=170pt, yshift=-46pt] (M) {};
+				\node [place, xshift=201pt, yshift=-59pt] (N) {};
+
+				\path[-, thick, color=gray]
+				(A) edge (B)
+				(A) edge (D)
+				(B) edge (D)
+				(C) edge (D)
+				(C) edge (E)
+				(C) edge (F)
+				(C) edge (G)
+				(E) edge (F)
+				(E) edge (H)
+				(F) edge (G)
+				(F) edge (I)
+				(F) edge (J)
+				(G) edge (I)
+				(H) edge (L)
+				(I) edge (J)
+				(J) edge (K)
+				(K) edge (M)
+				(L) edge (M)
+				(M) edge (N);
+			\end{tikzpicture}}}
 		\end{column}
 	\end{columns}
 \end{frame}
