@@ -25,11 +25,12 @@
 \setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth,height=\paperheight]{background.png}}
 
 
-\definecolor{hintergrundgrau}{HTML}{FFFFFF}
-\definecolor{schrifthaupt}{HTML}{333000}
-	
-% \setbeamercolor{background canvas}{bg=hintergrundgrau}	
-	
+%\definecolor{hintergrundgrau}{HTML}{FFFFFF}
+%\definecolor{schrifthaupt}{HTML}{333000}
+\definecolor{ffyellow}{RGB}{255, 203, 18}
+
+% \setbeamercolor{background canvas}{bg=hintergrundgrau}
+
 \setbeamertemplate{frametitle}[default][left]
 \setbeamertemplate{navigation symbols}{} %no nav symbols
 
@@ -39,7 +40,7 @@
 \usecolortheme[RGB={37,37,37}]{structure}
 \setbeamercolor{normal text}{fg=black}
 %\setbeamercolor{copyright in head/foot}{fg=gray}
-\setbeamercolor{framenumber in head/foot}{fg=gray}
+\setbeamercolor{framenumber in head/foot}{fg=ffyellow}
 
 
 \setbeamertemplate{headline}{
@@ -56,8 +57,9 @@
   \hbox{%
   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=2ex,center]{copyright in head/foot}%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=2ex,right]{framenumber in head/foot}%
-    \usebeamerfont{framenumber in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+%  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=2ex,right]{framenumber in head/foot}%
+  \begin{beamercolorbox}[wd=.5\paperwidth, ht=2.25ex, dp=9pt, right]{framenumber in head/foot}%
+    \usebeamerfont{framenumber in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{5ex}
   \end{beamercolorbox}}%
   \vskip0pt%
 }
