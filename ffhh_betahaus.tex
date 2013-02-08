@@ -102,24 +102,26 @@
 \begin{frame}{Mesh-Netzwerke}
 %	\begin{columns}[c]
 %		\begin{column}[c]{0.4\textwidth}
+		\begin{center}
 			\begin{tikzpicture}
 				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
 				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
-				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=2.1cm]
-				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=1.5mm, inner sep=0pt]
+				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=84pt]
+				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=6pt, inner sep=0pt]
 
 				\node [vertex] (a) {};
-				\node [vertex, xshift=1.7cm, yshift=0.6cm] (b) {};
-				\node [vertex, xshift=2.8cm, yshift=-0.5cm] (c) {};
+				\node [vertex, xshift=68pt, yshift=24pt] (b) {};
+				\node [vertex, xshift=112pt, yshift=-20pt] (c) {};
 
 				\node [place, label=above:$A$] (A) {};
-				\node [place, xshift=1.7cm, yshift=0.6cm, label=above:$B$] (B) {};
-				\node [place, xshift=2.8cm, yshift=-0.5cm, label=right:$C$] (C) {};
+				\node [place, xshift=68pt, yshift=24pt, label=above:$B$] (B) {};
+				\node [place, xshift=112pt, yshift=-20pt, label=right:$C$] (C) {};
 
 				\path[-, thick, color=gray]
 				(A) edge (B)
 				(B) edge (C);
 			\end{tikzpicture}
+		\end{center}
 %		\end{column}
 %		\begin{column}[c]{0.5\textwidth}
 %			\begin{itemize}
@@ -137,26 +139,27 @@
 \begin{frame}{Mesh-Netzwerke}
 %	\begin{columns}[c]
 %		\begin{column}[c]{.4\textwidth}
-%TODO groesser!
+		\begin{center}
 			\begin{tikzpicture}
-				\definecolor{outerCircleColour}{RGB}{220, 0, 103}
+\definecolor{outerCircleColour}{RGB}{220, 0, 103}
 				\definecolor{innerCircleColour}{RGB}{255, 203, 18}
-				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=2.1cm]
-				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=1.5mm, inner sep=0pt]
+				\tikzstyle{vertex}=[circle, draw, color=outerCircleColour, ultra thick, minimum size=84pt]
+				\tikzstyle{place}=[circle, draw, color=innerCircleColour, fill=innerCircleColour, minimum size=6pt, inner sep=0pt]
 
 				\node [vertex] (a) {};
-				\node [vertex, xshift=1.7cm, yshift=0.6cm] (b) {};
-				\node [vertex, xshift=2.8cm, yshift=-0.5cm] (c) {};
+				\node [vertex, xshift=68pt, yshift=24pt] (b) {};
+				\node [vertex, xshift=112pt, yshift=-20pt] (c) {};
 
 				\node [place, label=above:$A$] (A) {};
-				\node [place, xshift=1.7cm, yshift=0.6cm, label=above:$B$] (B) {};
-				\node [place, xshift=2.8cm, yshift=-0.5cm, label=right:$C$] (C) {};
+				\node [place, xshift=68pt, yshift=24pt, label=above:$B$] (B) {};
+				\node [place, xshift=112pt, yshift=-20pt, label=right:$C$] (C) {};
 
 				\path[-, thick, color=gray]
 				(A) edge (B)
 				(B) edge (C)
 				(A) edge[dashed] (C);
 			\end{tikzpicture}
+		\end{center}
 %		\end{column}
 %		\begin{column}[c]{.5\textwidth}
 %			Damit Informationen von einem Ende des Netzes ($A$) zum anderen gelangen können ($C$), muss die dazwischen liegende Knotenpunkte ($B$) den ungehinderten Transfer von Daten erlauben!\\
